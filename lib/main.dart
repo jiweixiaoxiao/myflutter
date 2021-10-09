@@ -39,7 +39,7 @@ class Hello extends StatelessWidget {
   build(BuildContext context) {
     return const Center(
       child: Text(
-        '你好，season',
+        '你好，季炜',
         textDirection: TextDirection.ltr,
         style: TextStyle(
           color: Colors.blue,
