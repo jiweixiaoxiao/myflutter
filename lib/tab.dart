@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myflutter/page_demo.dart';
 import 'package:myflutter/input_field.dart';
+import 'package:myflutter/router_demo.dart';
 import 'button_demo.dart';
 import 'drawer_list.dart';
 import 'more_widge.dart';
@@ -8,7 +9,7 @@ import 'more_widge.dart';
 class HelloTab extends StatelessWidget {
   build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 5,
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Tab标签栏切换'),
@@ -35,6 +36,7 @@ class HelloTab extends StatelessWidget {
               Tab(text: 'Java'),
               Tab(text: 'Go'),
               Tab(text: 'Button'),
+              Tab(text: 'Router'),
             ],
           ),
         ),
@@ -48,6 +50,7 @@ class HelloTab extends StatelessWidget {
             MoreWidge(),
             InputWidget(),
             ButtonDemo(),
+            RouteDemo(),
           ],
         ),
         drawer: DrawerList(),

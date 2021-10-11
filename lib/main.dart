@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myflutter/home.dart';
 import 'package:myflutter/tab.dart';
+
+import 'button_demo.dart';
 void main() {
   runApp(
       App()
@@ -12,8 +14,14 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter',
-      home: HelloTab(),
+      // home: HelloTab(),
       debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HelloTab(),
+        '/home': (context)=> Home(),
+        '/button': (context) => ButtonDemo(),
+      },
     );
   }
 }
