@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myflutter/page_demo.dart';
+import 'package:myflutter/input_field.dart';
 import 'drawer_list.dart';
+import 'more_widge.dart';
 class HelloTab extends StatelessWidget {
   build(BuildContext context) {
     return DefaultTabController(
@@ -38,8 +40,8 @@ class HelloTab extends StatelessWidget {
         // body: WidgetDemoContainer2(),
         body: TabBarView(children: [
           PageDemo(),
-          const Icon(Icons.search, size: 90.0),
-          const Icon(Icons.view_agenda, size: 90.0),
+          MoreWidge(),
+          InputWidget(),
         ],),
         drawer: DrawerList(),
       ),
