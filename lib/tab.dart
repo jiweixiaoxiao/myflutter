@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myflutter/page_demo.dart';
 import 'drawer_list.dart';
 class HelloTab extends StatelessWidget {
   build(BuildContext context) {
@@ -35,10 +36,10 @@ class HelloTab extends StatelessWidget {
         // body: WidgeDemo(),
         // body:WidgeDemoRichText(),
         // body: WidgetDemoContainer2(),
-        body: const TabBarView(children: [
-          Icon(Icons.settings, size: 90.0),
-          Icon(Icons.search, size: 90.0),
-          Icon(Icons.view_agenda, size: 90.0),
+        body: TabBarView(children: [
+          PageDemo(),
+          const Icon(Icons.search, size: 90.0),
+          const Icon(Icons.view_agenda, size: 90.0),
         ],),
         drawer: DrawerList(),
       ),
