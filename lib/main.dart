@@ -3,6 +3,7 @@ import 'package:myflutter/home.dart';
 import 'package:myflutter/tab.dart';
 
 import 'button_demo.dart';
+import 'data_type.dart';
 void main() {
   runApp(
       App()
@@ -18,7 +19,8 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => HelloTab(),
+        '/': (context) => const DataType(),
+        '/hello': (context) => HelloTab(),
         '/home': (context)=> Home(),
         '/button': (context) => ButtonDemo(),
       },
