@@ -18,7 +18,7 @@ class App extends StatelessWidget {
       // home: HelloTab(),
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
-      routes: {
+      routes: <String, WidgetBuilder>{
         '/': (context) => const DataType(),
         '/hello': (context) => HelloTab(),
         '/home': (context)=> Home(),
