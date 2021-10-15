@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-///StatelessWidget与基础组件
+///StatelessWidget与基础组件 - 无状态
 class LessGroupPage extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -8,9 +8,14 @@ class LessGroupPage extends StatelessWidget {
     TextStyle textStyle = TextStyle(fontSize: 20);
     return MaterialApp(
       title: 'StatelessWidget与基础组件',
+      // color: Colors.red,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+/*      darkTheme: ThemeData(
+        primarySwatch: Colors.yellow,
+      ),*/
+      // darkTheme: ThemeData.dark(),
       home: Scaffold(
         appBar: AppBar(
           title: Text('StatelessWidget与基础组件'),
