@@ -24,11 +24,11 @@ class _LaunchPageState extends State<LaunchPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            RaisedButton(
+            ElevatedButton(
               onPressed: () => _launchURL(),
               child: Text('打开浏览器'),
             ),
-            RaisedButton(
+            ElevatedButton(
               onPressed: () => _openMap(),
               child: Text('打开地图'),
             )

@@ -7,7 +7,7 @@ class LessGroupPage extends StatelessWidget {
   Widget build(BuildContext context) {
     TextStyle textStyle = TextStyle(fontSize: 20);
     return MaterialApp(
-      title: 'StatelessWidget与基础组件',
+      title: '1StatelessWidget与基础组件',
       // color: Colors.red,
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -18,7 +18,10 @@ class LessGroupPage extends StatelessWidget {
       // darkTheme: ThemeData.dark(),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('StatelessWidget与基础组件'),
+          title: const Text('StatelessWidget与基础组件'),
+          actions: <Widget>[
+            IconButton(onPressed:() {}, icon: Icon(Icons.share)),
+          ],
           leading: GestureDetector(
             onTap: () {
               Navigator.pop(context);
@@ -72,6 +75,25 @@ class LessGroupPage extends StatelessWidget {
             ],
           ),
         ),
+        /*bottomNavigationBar: BottomNavigationBar(
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home1',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.business),
+              label: 'Business',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.school),
+              label: 'School',
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.amber[800],
+          onTap: _onItemTapped,
+        ),*/
       ),
     );
   }

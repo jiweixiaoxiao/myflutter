@@ -21,9 +21,10 @@ class MyApp extends StatelessWidget {
         ),
         home: Scaffold(
           appBar: AppBar(
-            title: Text('如何创建和使用Flutter的路由与导航？'),
+            title: Text('1如何创建和使用Flutter的路由与导航？',),
           ),
           body: RouteNavigator(),
+          drawer: new Drawer(),
         ),
         routes: <String, WidgetBuilder>{
           // 'plugin': (BuildContext context) => PluginUse(),

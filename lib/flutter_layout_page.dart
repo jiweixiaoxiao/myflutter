@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 ///如何进行Flutter布局开发？
 class FlutterLayoutPage extends StatefulWidget {
+
   @override
   _FlutterLayoutPageState createState() => _FlutterLayoutPageState();
 }
-
 class _FlutterLayoutPageState extends State<FlutterLayoutPage> {
   int _currentIndex = 0;
 
@@ -50,8 +50,10 @@ class _FlutterLayoutPageState extends State<FlutterLayoutPage> {
                   ),
                   title: Text('列表'))
             ]),
-        floatingActionButton: const FloatingActionButton(
-          onPressed: null,
+        floatingActionButton:  FloatingActionButton(
+          onPressed: (){
+            print("press onPressed");
+          },
           child: Text('点我'),
         ),
         body: _currentIndex == 0
@@ -78,7 +80,7 @@ class _FlutterLayoutPageState extends State<FlutterLayoutPage> {
                             child: ClipRRect(
                               //圆角
                               borderRadius:
-                              BorderRadius.all(Radius.circular(10)),
+                              BorderRadius.all(Radius.circular(20)),
                               child: Opacity(
                                 opacity: 0.6, //60%透明度
                                 child: Image.network(
@@ -93,6 +95,7 @@ class _FlutterLayoutPageState extends State<FlutterLayoutPage> {
                       ),
                       const TextField(
                         //输入文本的样式
+                        maxLength : 3,
                         decoration: InputDecoration(
                             contentPadding: EdgeInsets.fromLTRB(5, 0, 0, 0),
                             hintText: '请输入',
@@ -101,6 +104,7 @@ class _FlutterLayoutPageState extends State<FlutterLayoutPage> {
                       Container(
                         height: 100,
                         margin: EdgeInsets.all(10),
+                        //PhysicalModel ，主要的功能就是设置widget四边圆角，可以设置阴影颜色，和z轴高度
                         child: PhysicalModel(
                           color: Colors.transparent,
                           borderRadius: BorderRadius.circular(6),
@@ -116,6 +120,15 @@ class _FlutterLayoutPageState extends State<FlutterLayoutPage> {
                       ),
                       Column(
                         children: <Widget>[
+                          /**
+                           * Sizes its child to a fraction of the total available space.
+
+                              For both its width and height,
+                              this render object imposes a tight constraint on its child that is a multiple (typically less than 1.0) of the maximum constraint it received
+                              from its parent on that axis.
+                              If the factor for a given axis is null,
+                              then the constraints from the parent are just passed through instead.
+                           */
                           FractionallySizedBox(
                             widthFactor: 1,
                             child: Container(
@@ -137,8 +150,8 @@ class _FlutterLayoutPageState extends State<FlutterLayoutPage> {
                       height: 100,
                     ),
                     Positioned(
-                        left: 0,
-                        bottom: 0,
+                        left: 25,
+                        bottom: 25,
                         child: Image.network(
                           'http://www.devio.org/img/avatar.png',
                           width: 36,
@@ -148,8 +161,8 @@ class _FlutterLayoutPageState extends State<FlutterLayoutPage> {
                 ),
                 Wrap(
                   //创建一个wrap布局，从左向右进行排列，会自动换行
-                  spacing: 8, //水平间距
-                  runSpacing: 6, //垂直间距
+                  spacing: 20, //水平间距
+                  runSpacing: 20, //垂直间距
                   children: <Widget>[
                     _chip('Flutter'),
                     _chip('进阶'),
