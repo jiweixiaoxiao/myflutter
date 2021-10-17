@@ -37,6 +37,8 @@ dependencies:
   flutter_color_plugin: ^1.0.0
   url_launcher: ^6.0.12
   image_picker: ^0.8.4+2
+  video_player: ^2.2.5
+  xfile: ^1.1.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

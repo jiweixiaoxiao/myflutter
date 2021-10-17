@@ -10,16 +10,18 @@ class PhotoApp extends StatefulWidget {
 }
 
 class _PhotoAppState extends State<PhotoApp> {
-  List<File> _images = [];
+  final List<File> _images = [];
 
   Future getImage(bool isTakePhoto) async {
     Navigator.pop(context);
-    var image = await ImagePicker.pickImage(
+    var image = await ImagePicker().pickImage(
         source: isTakePhoto ? ImageSource.camera : ImageSource.gallery);
-
-    setState(() {
-      _images.add(image);
-    });
+    if (image != null) {
+      setState(() {
+        _images.add(File(image.path));
+        //_images.add(image);
+      });
+    }
   }
 
   @override
