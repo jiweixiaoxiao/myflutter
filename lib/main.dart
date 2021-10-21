@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:myflutter/photo_app_page.dart';
 import 'package:myflutter/statefull_group_page.dart';
-
+import 'http_demo.dart';
 import 'app_lifecycle.dart';
 import 'flutter_layout_page.dart';
 import 'flutter_widget_lifecycle.dart';
 import 'gesture_page.dart';
-import 'http_demo.dart';
+import 'image_wigget_demo.dart';
 import 'launch_page.dart';
 import 'less_group_page.dart';
+import 'logo_animation.dart';
 
 void main() => runApp(MyApp());
 
@@ -75,6 +76,8 @@ class _RouteNavigatorState extends State<RouteNavigator> {
           _item('Flutter页面生命周期', WidgetLifecycle(), 'widgetLifecycle'),
           _item('Flutter应用生命周期', AppLifecycle(), 'appLifecycle'),
           _item('【实战尝鲜】拍照APP开发', PhotoApp(), 'photo'),
+          _item('图片控件开发详解', ImageWidgetDemo(), 'ImageWidgetDemo'),
+          _item('为widget添加动画1', LogoApp(), 'LogoApp'),
           _item('基于Http实现网络操作', HttpDemoApp(), 'httpDemo'),
         ],
       ),
