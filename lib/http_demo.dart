@@ -11,13 +11,14 @@ class HttpDemoApp extends StatefulWidget{
 
 class _HttpDemoApp  extends State<HttpDemoApp>{
   String showResult = '';
-  Future<CommonModel> fetchPost() async {
+  Future<CommonModel> _fetchPost() async {
     var url =
     Uri.http('www.devio.org', '/io/flutter_app/json/test_common_model.json', {'q': '{http}'});
     final response = await http.get(url);
     final result = json.decode(response.body);
     return CommonModel.fromJson(result);
   }
+
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
@@ -30,7 +31,7 @@ class _HttpDemoApp  extends State<HttpDemoApp>{
           children: <Widget>[
             InkWell(
               onTap: (){
-                fetchPost().then((CommonModel value) {
+                _fetchPost().then((CommonModel value) {
                   setState(() {
                     showResult = '请求结果：hideAppBar：${value.hideAppBar}icon：${value.icon}title: ${value.title}statusBarColor: ${value.statusBarColor}';
                   });
