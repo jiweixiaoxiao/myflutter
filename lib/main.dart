@@ -6,6 +6,7 @@ import 'app_lifecycle.dart';
 import 'flutter_layout_page.dart';
 import 'flutter_widget_lifecycle.dart';
 import 'gesture_page.dart';
+import 'http_demo.dart';
 import 'launch_page.dart';
 import 'less_group_page.dart';
 
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
           'widgetLifecycle': (BuildContext context) => WidgetLifecycle(),
           'appLifecycle': (BuildContext context) => AppLifecycle(),
           'photo': (BuildContext context) => PhotoApp(),
+          'httpDemo': (BuildContext context) => HttpDemoApp(),
         });
   }
 }
@@ -73,6 +75,7 @@ class _RouteNavigatorState extends State<RouteNavigator> {
           _item('Flutter页面生命周期', WidgetLifecycle(), 'widgetLifecycle'),
           _item('Flutter应用生命周期', AppLifecycle(), 'appLifecycle'),
           _item('【实战尝鲜】拍照APP开发', PhotoApp(), 'photo'),
+          _item('基于Http实现网络操作', HttpDemoApp(), 'httpDemo'),
         ],
       ),
     );
