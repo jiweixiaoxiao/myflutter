@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myflutter/photo_app_page.dart';
 import 'package:myflutter/statefull_group_page.dart';
+import 'future_demo.dart';
 import 'http_demo.dart';
 import 'app_lifecycle.dart';
 import 'flutter_layout_page.dart';
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
           'appLifecycle': (BuildContext context) => AppLifecycle(),
           'photo': (BuildContext context) => PhotoApp(),
           'httpDemo': (BuildContext context) => HttpDemoApp(),
+          'futureDemo': (BuildContext context) => FutureDemo(),
         });
   }
 }
@@ -79,6 +81,7 @@ class _RouteNavigatorState extends State<RouteNavigator> {
           _item('图片控件开发详解', ImageWidgetDemo(), 'ImageWidgetDemo'),
           _item('为widget添加动画1', LogoApp(), 'LogoApp'),
           _item('基于Http实现网络操作', HttpDemoApp(), 'httpDemo'),
+          _item('基于future实现异步网络请求', FutureDemo(), 'futureDemo'),
         ],
       ),
     );
