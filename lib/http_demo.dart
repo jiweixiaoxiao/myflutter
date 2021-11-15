@@ -14,8 +14,9 @@ class _HttpDemoApp  extends State<HttpDemoApp>{
   Future<CommonModel> _fetchPost() async {
     var url =
     Uri.http('www.devio.org', '/io/flutter_app/json/test_common_model.json', {'q': '{http}'});
+    Utf8Decoder utf8decoder = Utf8Decoder(); //fix 中文乱码
     final response = await http.get(url);
-    final result = json.decode(response.body);
+    final result = json.decode(utf8decoder.convert(response.bodyBytes));
     return CommonModel.fromJson(result);
   }
 

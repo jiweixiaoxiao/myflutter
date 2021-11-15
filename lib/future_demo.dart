@@ -11,6 +11,7 @@ class FutureDemo extends StatefulWidget {
 
 class _MyAppState extends State<FutureDemo> {
   String showResult = '';
+  // 发送请求的方法
   Future<CommonModel> fetchPost() async {
     var url =
     Uri.http('www.devio.org', '/io/flutter_app/json/test_common_model.json', {'q': '{http}'});
@@ -18,6 +19,7 @@ class _MyAppState extends State<FutureDemo> {
         .get(url);
     Utf8Decoder utf8decoder = Utf8Decoder(); //fix 中文乱码
     var result = json.decode(utf8decoder.convert(response.bodyBytes));
+    // 把返回的结果封装成对象
     return CommonModel.fromJson(result);
   }
 
@@ -33,6 +35,7 @@ class _MyAppState extends State<FutureDemo> {
             builder:
                 (BuildContext context, AsyncSnapshot<CommonModel> snapshot) {
               switch (snapshot.connectionState) {
+                // 根据不同的的状态放置不同的组件
                 case ConnectionState.none:
                   return new Text('Input a URL to start');
                 case ConnectionState.waiting:
