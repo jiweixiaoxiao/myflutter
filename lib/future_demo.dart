@@ -36,19 +36,19 @@ class _MyAppState extends State<FutureDemo> {
                 (BuildContext context, AsyncSnapshot<CommonModel> snapshot) {
               switch (snapshot.connectionState) {
                 // 根据不同的的状态放置不同的组件
-                case ConnectionState.none:
+                case ConnectionState.none: //网络请求还未开始的状态
                   return new Text('Input a URL to start');
-                case ConnectionState.waiting:
+                case ConnectionState.waiting:// 网络请求正在进行的状态，现实一个加载框
                   return new Center(child: new CircularProgressIndicator());
                 case ConnectionState.active:
                   return new Text('');
-                case ConnectionState.done:
-                  if (snapshot.hasError) {
+                case ConnectionState.done: // 网络请求结束的状态
+                  if (snapshot.hasError) { // 如果网络请求失败了
                     return Text(
                       '${snapshot.error}',
                       style: TextStyle(color: Colors.red),
                     );
-                  } else {
+                  } else { // 网络请求成功了
                     return Column(children: <Widget>[
                       Text('icon:${snapshot.data!.icon}'),
                       Text('statusBarColor:${snapshot.data!.statusBarColor}'),
